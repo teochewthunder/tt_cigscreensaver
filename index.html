@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Screensaver</title>
+
+		<style>
+			#overlay
+			{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: rgba(0, 0, 0, 0.5);
+				display: none;
+			}	
+
+			.content
+			{
+				width: 500px;
+				height: 500px;
+				margin: 10% auto 0 autp;
+				background-color: rgba(255, 255, 255, 1);
+				border-radius: 30px;
+			}
+		</style>
+
+		<script>
+			var idleCounter = 
+			{
+				seconds: 0,
+				secondsToPopup: 5,
+				timer: null,
+				popupOpen: false,
+				startTimer: function()
+				{
+					//setInterval
+				},
+				stopTimer: function()
+				{
+					//clearInterval
+					//reset to 0
+					//close popup
+				},
+				incrementSeconds: function()
+				{
+					//if secondstoPopup
+					//open opopup
+
+					//secondstoPopup
+				},
+				popup: function()
+				{
+
+				}
+			};
+
+			//body onload, startTimer
+
+			//body onclick/keypress etc, stopTimer
+		</script>
+	</head>
+	<body>
+		<p>Some sample text. Leave this screen alone for 5 seconds to see the popup!</p>
+		<div id="overlay">
+			<div class="content">
+				
+			</div>
+		</div>
+	</body>
+</html>
