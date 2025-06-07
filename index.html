@@ -4,6 +4,8 @@
 		<title>Screensaver</title>
 
 		<style>
+			div { outline: 1px solid red; }
+
 			#overlay
 			{
 				width: 100%;
@@ -19,9 +21,56 @@
 			{
 				width: 500px;
 				height: 500px;
-				margin: 10% auto 0 autp;
+				margin: 10% auto 0 auto;
 				background-color: rgba(255, 255, 255, 1);
 				border-radius: 30px;
+			}
+
+			.cigarette
+			{
+				width: 50px;
+				height: 400px;
+				margin: 10% auto 0 auto;
+			}
+
+			.butt
+			{
+				width: 100%;
+				height: 100px;
+				background-color: rgba(255, 255, 100, 1);
+			}
+
+			.body
+			{
+				width: 100%;
+				height: 300px;
+				background-color: none;
+			}
+
+			#empty
+			{
+				width: 100%;
+				height: 50px;
+			}
+
+			#burnable
+			{
+				width: 100%;
+				height: 250px;
+				background-color: rgba(150, 150, 150, 1);
+			}
+
+			.tip
+			{
+				width: 100%;
+				height: 15px;
+				background-color: rgba(255, 255, 255, 1);
+			}
+
+			.ember
+			{
+				float: left;
+				background-color: rgba(255, 0, 0, 1);
 			}
 		</style>
 
@@ -40,6 +89,7 @@
 				{
 					if (!this.lastActivity) this.setLastActivity();
 					this.popup();
+					console.log(this.lastActivity);
 				},
 				startTimer: function()
 				{
@@ -52,23 +102,84 @@
 				},
 				popup: function()
 				{
-					//if secondstoPopup
-					//open opopup
+					var d = new Date();
+					var diff = d.getTime() - this.lastActivity.getTime();
+					diff = diff / 1000;
 
-					//secondstoPopup
+					var overlay = document.getElementById("overlay");
+					var empty = document.getElementById("empty");
+					var burnable = document.getElementById("burnable");
+
+					console.log("diff (secs)", diff);
+					
+					if (diff >= this.msToPopup)
+					{
+						overlay.style.display = "block";
+						empty.style.height = "50px";
+						burnable.style.height = "250px";
+
+						if (diff >= (this.msToPopup * 2))
+						{
+							empty.style.height = "80px";
+							burnable.style.height = "220px";
+						}
+
+						if (diff >= (this.msToPopup * 3))
+						{
+							empty.style.height = "100px";
+							burnable.style.height = "200px";
+						}
+
+						if (diff >= (this.msToPopup * 5))
+						{
+							empty.style.height = "200px";
+							burnable.style.height = "100px";
+						}
+
+						if (diff >= (this.msToPopup * 10))
+						{
+							empty.style.height = "250px";
+							burnable.style.height = "50px";
+						}
+					}
+					else 
+					{
+						overlay.style.display = "none";
+					}
 				}
 			};
 
-			//body onload, startTimer
+		    window.onload = ()=> {
+		    	idleCounter.startTimer();
 
-			//body onclick/keypress etc, setLastActivity
+				document.body.addEventListener("keypress", ()=> { idleCounter.setLastActivity(); });
+				document.body.addEventListener("mousemove", ()=> { idleCounter.setLastActivity(); });
+		    };
 		</script>
 	</head>
 	<body>
 		<p>Some sample text. Leave this screen alone for 5 seconds to see the popup!</p>
 		<div id="overlay">
 			<div class="content">
-				
+				<div class="cigarette">
+					<div class="body">
+						<div id="empty">
+							
+						</div>
+
+						<div id="burnable">
+							<div class="tip">
+								<div class="ember" style="width:15px;height:10px;margin-top:5px"></div>
+								<div class="ember" style="width:20px;height:15px"></div>
+								<div class="ember" style="width:15px;height:10px;margin-top:5px"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="butt">
+						
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
