@@ -28,36 +28,40 @@
 		<script>
 			var idleCounter = 
 			{
-				seconds: 0,
-				secondsToPopup: 5,
-				timer: null,
+				lastActivity: null,
+				msToPopup: 5,
 				popupOpen: false,
+				setLastActivity: function()
+				{
+					this.lastActivity = new Date();
+					this.popup();
+				},
+				observeLastActivity: function()
+				{
+					if (!this.lastActivity) this.setLastActivity();
+					this.popup();
+				},
 				startTimer: function()
 				{
-					//setInterval
+					setInterval(
+						() => {
+							this.observeLastActivity();
+						},
+						10000
+					)
 				},
-				stopTimer: function()
-				{
-					//clearInterval
-					//reset to 0
-					//close popup
-				},
-				incrementSeconds: function()
+				popup: function()
 				{
 					//if secondstoPopup
 					//open opopup
 
 					//secondstoPopup
-				},
-				popup: function()
-				{
-
 				}
 			};
 
 			//body onload, startTimer
 
-			//body onclick/keypress etc, stopTimer
+			//body onclick/keypress etc, setLastActivity
 		</script>
 	</head>
 	<body>
