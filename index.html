@@ -21,9 +21,10 @@
 			{
 				width: 500px;
 				height: 500px;
-				margin: 10% auto 0 auto;
+				margin: 5% auto 0 auto;
 				background-color: rgba(255, 255, 255, 1);
 				border-radius: 30px;
+				overflow: hidden;
 			}
 
 			.cigarette
@@ -52,20 +53,54 @@
 			{
 				width: 100%;
 				height: 50px;
+				background-color: rgba(255, 255, 255, 1);
+				overflow: visible;
+			}
+
+			.smoke
+			{
+				border-radius: 50%;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+			}
+
+			.smoke1
+			{
+  				animation-name: smokebubble1;
+  				animation-duration: 1s;
+  				animation-iteration-count: infinite;
+  				animation-direction: alternate;
+			}
+
+			.smoke2
+			{
+  				animation-name: smokebubble2;
+  				animation-duration: 3s;
+  				animation-iteration-count: infinite;
+  				animation-direction: alternate;
+			}
+
+			@keyframes smokebubble1
+			{
+			 	from { box-shadow: 0 0 5px rgba(0, 0, 0, 1); }
+			}
+
+			@keyframes smokebubble2 
+			{
+			 	from { box-shadow: 0 0 8px rgba(0, 0, 0, 0.8); }
 			}
 
 			#burnable
 			{
 				width: 100%;
 				height: 250px;
-				background-color: rgba(230, 230, 230, 1);
+				background-color: rgba(255, 255, 255, 1);
 				background: linear-gradient(90deg, rgba(230, 230, 230, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(230, 230, 230, 1) 100%);
 			}
 
 			.tip
 			{
 				width: 100%;
-				height: 15px;
+				height: 5px;
 				background-color: rgba(255, 255, 255, 1);
 			}
 
@@ -176,14 +211,32 @@
 				<div class="cigarette">
 					<div class="body">
 						<div id="empty">
-							
+							<div class="smoke smoke1" style="width:25px;height:25px;margin-top:5px;margin-left:25px"></div>
+							<div class="smoke smoke1" style="width:40px;height:40px;margin-top:-2px;margin-left:13px"></div>
+							<div class="smoke smoke2" style="width:18px;height:18px;margin-top:0px;margin-left:5px"></div>
+							<div class="smoke smoke1" style="width:10px;height:10px;margin-top:-5px;margin-left:25px"></div>
+							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:0px;margin-left:25px"></div>
+							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:15px"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-5px;margin-left:13px"></div>
+							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
+							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:-2px;margin-left:5px"></div>
+							<div class="smoke smoke2" style="width:21px;height:21px;margin-top:-5px;margin-left:15px"></div>
+							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:-2px;margin-left:5px"></div>
+							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
+							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:10px"></div>
+							<div class="smoke smoke2" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
+							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:0px;margin-left:25px"></div>
+							<div class="smoke smoke2" style="width:22px;height:22px;margin-top:-5px;margin-left:10px"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-2px;margin-left:25px"></div>
 						</div>
 
 						<div id="burnable">
 							<div class="tip">
-								<div class="ember" style="width:15px;height:10px;margin-top:5px"></div>
-								<div class="ember" style="width:20px;height:15px"></div>
-								<div class="ember" style="width:15px;height:10px;margin-top:5px"></div>
+								<div class="ember" style="width:15px;height:3px;margin-top:2px"></div>
+								<div class="ember" style="width:20px;height:5px"></div>
+								<div class="ember" style="width:15px;height:3px;margin-top:2px"></div>
 							</div>
 						</div>
 					</div>
