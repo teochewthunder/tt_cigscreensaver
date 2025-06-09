@@ -22,7 +22,7 @@
 				width: 500px;
 				height: 500px;
 				margin: 5% auto 0 auto;
-				background-color: rgba(255, 255, 255, 1);
+				background-color: rgba(0, 0, 0, 1);
 				border-radius: 30px;
 				overflow: hidden;
 			}
@@ -53,15 +53,15 @@
 			{
 				width: 100%;
 				height: 50px;
-				background-color: rgba(255, 255, 255, 1);
+				background-color: rgba(0, 0, 0, 1);
 				overflow: visible;
 			}
 
 			.smoke
 			{
-				background-color: rgba(0, 0, 0, 0.2);
+				background-color: rgba(255, 255, 255, 0.2);
 				border-radius: 50%;
-				box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+				box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 			}
 
 			.smoke1
@@ -82,12 +82,12 @@
 
 			@keyframes smokebubble1
 			{
-			 	from { box-shadow: 0 0 11px rgba(0, 0, 0, 1); }
+			 	from { box-shadow: 0 0 11px rgba(255, 255, 255, 1); }
 			}
 
 			@keyframes smokebubble2 
 			{
-			 	from { box-shadow: 0 0 12px rgba(0, 0, 0, 0.8); }
+			 	from { box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); }
 			}
 
 			#burnable
@@ -102,13 +102,12 @@
 			{
 				width: 100%;
 				height: 5px;
-				background-color: rgba(255, 255, 255, 1);
 			}
 
 			.ember
 			{
 				float: left;
-				background-color: rgba(15, 15, 15, 1);
+				background-color: rgba(150, 150, 150, 1);
   				animation-name: emberglow;
   				animation-duration: 2s;
   				animation-iteration-count: infinite;
@@ -117,7 +116,7 @@
 
 			@keyframes emberglow 
 			{
-			 	from { background-color: rgba(15, 15, 15, 1); }
+			 	from { background-color: rgba(150, 150, 150, 1); }
 				to { background-color: rgba(255, 0, 0, 1); }
 			}
 		</style>
@@ -145,7 +144,7 @@
 						() => {
 							this.observeLastActivity();
 						},
-						10000
+						5000
 					)
 				},
 				popup: function()
@@ -207,37 +206,41 @@
 	</head>
 	<body>
 		<p>Some sample text. Leave this screen alone for 5 seconds to see the popup!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque et justo sit amet libero interdum bibendum at nec dui. Mauris lacinia sapien nec blandit dapibus. Nunc suscipit in nunc in finibus. Praesent mi arcu, convallis auctor auctor luctus, gravida eget enim. Nunc quis finibus nisl, semper hendrerit nisl. Curabitur faucibus, velit varius efficitur suscipit, nibh ipsum bibendum turpis, placerat elementum nulla lorem eget diam. Phasellus lobortis aliquet leo, non aliquet mauris volutpat vel. Aliquam facilisis dui id sapien dignissim vulputate. Nullam cursus convallis sem vel maximus. Sed ac sollicitudin justo, at vehicula ligula. Praesent sit amet tellus massa. Nam nec varius ipsum.</p>
+		<p>Cras varius, nisl vitae lobortis sodales, purus ligula dictum eros, volutpat finibus neque sem et ligula. Vivamus id odio varius, blandit elit sit amet, scelerisque enim. Sed luctus molestie leo, suscipit ultricies nisl elementum id. Donec lacus erat, laoreet vel viverra vel, aliquam vitae elit. Vestibulum venenatis congue lacus a facilisis. Nulla condimentum, metus volutpat rhoncus maximus, purus mauris imperdiet dolor, at bibendum lacus justo nec risus. Praesent scelerisque libero magna, at lobortis justo convallis vel. Suspendisse cursus, odio ultricies auctor laoreet, ligula leo vulputate diam, et efficitur mauris nisl et urna. Quisque sit amet rutrum magna. Aenean at vestibulum urna. Nam ornare justo a tortor molestie auctor. Quisque at malesuada mi, volutpat feugiat sem.</p>
+		<p>Vestibulum luctus tempor ligula. Nulla id tortor ut est rutrum viverra. Etiam nec sapien id massa egestas dapibus at ut ipsum. Nunc sed tortor euismod, aliquet arcu et, commodo justo. Proin pretium vel neque sed maximus. In vitae vestibulum quam. Integer quis ex in ligula varius tempus. Donec diam arcu, faucibus eu aliquet nec, dapibus at sem. Sed convallis urna neque, tristique condimentum mauris condimentum vel. Praesent eu interdum quam, at ullamcorper augue. Mauris euismod odio libero, vel pharetra lorem egestas et. Nam laoreet ultricies venenatis. Integer ante risus, commodo nec eros ac, convallis tempus magna. Maecenas dictum lacus magna.</p>
+		<p>Proin eu iaculis felis, sed lobortis lectus. Pellentesque malesuada diam eu porttitor aliquam. Fusce posuere dapibus odio vitae suscipit. Mauris consectetur, tortor et pulvinar auctor, ante eros ornare nunc, non fringilla neque quam sed erat. In velit turpis, ultricies ut egestas in, porttitor eget erat. Sed et risus molestie, maximus mauris eu, accumsan sem. Sed pellentesque feugiat elit. Integer nisl nulla, condimentum eu purus id, vestibulum commodo ligula. Phasellus consectetur, justo in mollis egestas, nisl felis laoreet ipsum, ac feugiat nunc ante sit amet risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla in enim lacus. Proin nulla dui, dictum at porttitor et, consectetur ac augue. Aliquam fringilla ex nec diam efficitur, vel vehicula mi molestie. Phasellus pellentesque in sem vitae porta. Nulla ut ultricies enim. Duis eu mauris sit amet lectus mattis efficitur molestie non magna.</p>
 		<div id="overlay">
 			<div class="content">
 				<div class="cigarette">
 					<div class="body">
 						<div id="empty">
-							<div class="smoke smoke1" style="width:25px;height:25px;margin-top:5px;margin-left:25px"></div>
-							<div class="smoke smoke1" style="width:40px;height:40px;margin-top:-2px;margin-left:13px"></div>
-							<div class="smoke smoke2" style="width:18px;height:18px;margin-top:0px;margin-left:5px"></div>
-							<div class="smoke smoke1" style="width:10px;height:10px;margin-top:-5px;margin-left:25px"></div>
-							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:0px;margin-left:25px"></div>
-							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:15px"></div>
-							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-5px;margin-left:13px"></div>
-							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px"></div>
-							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
-							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:-2px;margin-left:5px"></div>
-							<div class="smoke smoke2" style="width:21px;height:21px;margin-top:-5px;margin-left:15px"></div>
-							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:-2px;margin-left:5px"></div>
-							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px"></div>
-							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
-							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:10px"></div>
-							<div class="smoke smoke2" style="width:8px;height:8px;margin-top:0px;margin-left:25px"></div>
-							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:0px;margin-left:25px"></div>
-							<div class="smoke smoke2" style="width:22px;height:22px;margin-top:-5px;margin-left:10px"></div>
-							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-2px;margin-left:25px"></div>
+							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:5px;margin-left:25px;"></div>
+							<div class="smoke smoke1" style="width:20px;height:20px;margin-top:-2px;margin-left:13px;"></div>
+							<div class="smoke smoke2" style="width:18px;height:18px;margin-top:0px;margin-left:5px;"></div>
+							<div class="smoke smoke1" style="width:10px;height:10px;margin-top:-5px;margin-left:25px;"></div>
+							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:0px;margin-left:25px;"></div>
+							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:15px;"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-5px;margin-left:13px;"></div>
+							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px;"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px;"></div>
+							<div class="smoke smoke2" style="width:15px;height:15px;margin-top:-2px;margin-left:5px;"></div>
+							<div class="smoke smoke2" style="width:21px;height:21px;margin-top:-5px;margin-left:15px;"></div>
+							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:-2px;margin-left:5px;"></div>
+							<div class="smoke smoke2" style="width:12px;height:12px;margin-top:-5px;margin-left:8px;"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:0px;margin-left:25px;"></div>
+							<div class="smoke smoke2" style="width:25px;height:25px;margin-top:-2px;margin-left:10px;"></div>
+							<div class="smoke smoke2" style="width:8px;height:8px;margin-top:0px;margin-left:25px;"></div>
+							<div class="smoke smoke1" style="width:15px;height:15px;margin-top:0px;margin-left:25px;"></div>
+							<div class="smoke smoke2" style="width:22px;height:22px;margin-top:-5px;margin-left:10px;"></div>
+							<div class="smoke smoke1" style="width:8px;height:8px;margin-top:-2px;margin-left:25px;"></div>
 						</div>
 
 						<div id="burnable">
 							<div class="tip">
-								<div class="ember" style="width:15px;height:3px;margin-top:2px"></div>
-								<div class="ember" style="width:20px;height:5px"></div>
-								<div class="ember" style="width:15px;height:3px;margin-top:2px"></div>
+								<div class="ember" style="width:15px;height:3px;"></div>
+								<div class="ember" style="width:20px;height:5px;"></div>
+								<div class="ember" style="width:15px;height:3px;"></div>
 							</div>
 						</div>
 					</div>
