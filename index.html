@@ -4,7 +4,7 @@
 		<title>Screensaver</title>
 
 		<style>
-			div { outline: 1px solid red; }
+			div { outline: 0px solid red; }
 
 			#overlay
 			{
@@ -207,10 +207,10 @@
 
 		    window.onload = () => 
 		    {
-		    	//idleCounter.startTimer();
+		    	idleCounter.startTimer();
 
-				//document.body.addEventListener("keypress", ()=> { idleCounter.setLastActivity(); });
-				//document.body.addEventListener("mousemove", ()=> { idleCounter.setLastActivity(); });
+				document.body.addEventListener("keypress", ()=> { idleCounter.setLastActivity(); });
+				document.body.addEventListener("mousemove", ()=> { idleCounter.setLastActivity(); });
 		    };
 		</script>
 	</head>
